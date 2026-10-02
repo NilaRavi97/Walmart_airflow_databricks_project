@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+
+logs/
+target/
+dbt_packages/
+__pycache__/
+*.py[cod]
+config/*.cfg

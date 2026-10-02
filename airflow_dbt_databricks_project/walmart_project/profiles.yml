@@ -1,0 +1,11 @@
+walmart_project:
+  outputs:
+    dev:
+      catalog: walmart
+      host: "{{ env_var('DATABRICKS_HOST') }}"
+      http_path: /sql/1.0/warehouses/9e5249fad8f44629
+      schema: dbt_schema
+      threads: 1
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
+      type: databricks
+  target: dev
