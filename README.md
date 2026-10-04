@@ -4,24 +4,7 @@ A batch ELT pipeline that ingests retail data into **Databricks**, models it wit
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    A["Airflow 3.3<br/>orchestrate_dag · daily 10:00 UTC"]
-
-    subgraph DBX["Databricks · catalog: walmart"]
-        direction TB
-        B["Bronze<br/>raw CDC tables"]
-        ST["Silver Technical<br/>incremental tables"]
-        SB["Silver Business<br/>obt_b (one big table)"]
-        DIM["Gold Dimensions<br/>SCD2 snapshots"]
-        FACT["Gold Fact<br/>fact_orders"]
-        B --> ST --> SB --> DIM
-        SB --> FACT
-    end
-
-    A -- "Databricks SDK" --> B
-    A -- "dbt-databricks" --> ST
-```
+<img width="1600" height="667" alt="architecture" src="https://github.com/user-attachments/assets/4547496a-494f-497a-bd62-6a91db2ab97c" />
 
 ## Pipeline
 
